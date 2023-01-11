@@ -1,0 +1,63 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block content %}    
+<div class="single-post-page blog-post-page module">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-sm-12 col-md-12 col-lg-8 col-padding-y">
+                
+                <div class="single-post single-post-no-bg">
+                    
+                    <div class="img-thumbnail">
+                        <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                    </div><!-- News Img /-->
+                    
+                    <div class="single-blog-text">
+                        <h5><a href="{% url 'detail' post.slug %}">{{ post.title }}</a></h5>                                                
+                        <div class="meta-tags">
+                            <div class="post-author">
+                                <i class="far fa-calendar-check"><span>25 August 2018</span></i>
+                                <i class="far fa-user"><a href="#"> Ateeq Rafeeq</a></i>
+                            </div>
+                        </div>
+                        <p>{{ post.body|safe }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4 col-padding-y">
+                <div class="widget side-bar border-btm">
+                    
+                    <div class="content widget-search">
+                        <h6>Search Articles</h6>
+                        <input type="search" class="form-control" placeholder="Search">
+                        <button type="submit" class="btn btn-primary">Go</button>
+                    </div>
+                    
+                    <div class="content">
+                        <h6>Categories</h6>
+                        <ul class="list-unstyled">
+                            {% for cats in categories %}
+                            <li><a href="{{ cats.title }}">{{ cats.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="content widget-popular-posts">
+                        <h6>Popular Posts</h6>
+                        {% for post in posts %}
+                        <div class="popular-posts">
+                            <a href="{% url 'detail' post.slug %}"><strong>{{ post.title }}</strong></a>
+                            <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                            <p>{{ post.body|safe|truncatechars:120 }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+        
+      
