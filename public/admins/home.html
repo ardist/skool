@@ -1,0 +1,55 @@
+{% extends 'admins/base.html' %}
+{% load static %}
+
+{% block content %}  
+<div class="lg:w-3/4 md:w-2/3 md:px-3 mt-[30px] md:mt-0">
+    <div class="p-6 rounded-md shadow dark:shadow-gray-800 bg-white dark:bg-slate-900">
+        <h6 class="text-slate-400 mb-0">The following addresses will be used on the checkout page by default.</h6>
+        <div class="md:flex mt-6">
+            <div class="md:w-1/2 md:px-3">
+                <div class="flex items-center mb-4 justify-between">
+                    <h5 class="text-xl font-semibold">Billing Address:</h5>
+                    <a href="#" class="text-indigo-600 text-lg"><i class="uil uil-edit align-middle"></i></a>
+                </div>
+                <div class="pt-4 border-t border-gray-100 dark:border-gray-700">
+                    <p class="text-lg font-semibold mb-2">Jenny Jimenez</p>
+
+                    <ul class="list-none">
+                        <li class="flex">
+                            <i class="uil uil-map-marker text-lg mr-2"></i>
+                            <p class="text-slate-400">C/54 Northwest Freeway, Suite 558, <br> Houston, USA 485</p>
+                        </li>
+
+                        <li class="flex mt-1">
+                            <i class="uil uil-phone text-lg mr-2"></i>
+                            <p class="text-slate-400">+123 897 5468</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="md:w-1/2 md:px-3 mt-[30] md:mt-0">
+                <div class="flex items-center mb-4 justify-between">
+                    <h5 class="text-xl font-semibold">Shipping Address:</h5>
+                    <a href="#" class="text-indigo-600 text-lg"><i class="uil uil-edit align-middle"></i></a>
+                </div>
+                <div class="pt-4 border-t border-gray-100 dark:border-gray-700">
+                    <p class="text-lg font-semibold mb-2">Jenny Jimenez</p>
+
+                    <ul class="list-none">
+                        <li class="flex">
+                            <i class="uil uil-map-marker text-lg mr-2"></i>
+                            <p class="text-slate-400">C/54 Northwest Freeway, Suite 558, <br> Houston, USA 485</p>
+                        </li>
+
+                        <li class="flex mt-1">
+                            <i class="uil uil-phone text-lg mr-2"></i>
+                            <p class="text-slate-400">+123 897 5468</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

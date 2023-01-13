@@ -1,0 +1,25 @@
+{% extends 'admins/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    #cke_id_body{width: 100% !important;}
+</style>
+<div class="lg:w-3/4 md:w-2/3 md:px-3 mt-[30px] md:mt-0">
+    <div class="rounded-md shadow dark:shadow-gray-800 bg-white dark:bg-slate-900">
+        <div class="p-6 md:flex justify-between items-center border-b border-gray-100 dark:border-gray-700">
+            <div class="mb-4 md:mb-0">
+                <h5 class="text-xl font-semibold">Posting</h5>
+            </div>            
+        </div>
+        <div class="px-6 p-6">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                {{form.media}}
+                <input type="submit" value="Create Posting" class="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="light scroll-smooth" dir="ltr">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8" />
+        <title>Dashboard | SMK Negeri 1 Watulimo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Tailwind CSS Saas & Software Landing Page Template" />
+        <meta name="keywords" content="agency, application, business, clean, creative, cryptocurrency, it solutions, modern, multipurpose, nft marketplace, portfolio, saas, software, tailwind css" />
+        <meta name="author" content="Shreethemes" />
+        <meta name="website" content="https://shreethemes.in" />
+        <meta name="email" content="support@shreethemes.in" />
+        <meta name="version" content="1.5.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+        <!-- Main Css -->
+        <link href="{% static 'libs/@iconscout/unicons/css/line.css' %}" type="text/css" rel="stylesheet" />
+        <link rel="stylesheet" href="{% static 'css/icons.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/tailwind.css' %}" />
+
+    </head>
+    
+    <body class="font-nunito text-base text-black dark:text-white dark:bg-slate-900">
+
+        <!-- Loader Start -->
+        <!-- <div id="preloader">
+            <div id="status">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Loader End -->
+        
+        <!-- Start Navbar -->
+        <nav id="topnav" class="defaultscroll is-sticky">
+            <div class="container">
+                 <!-- Logo container-->
+                 <a class="logo pl-0" href="index.html">
+                    <span class="inline-block dark:hidden">
+                        <img src="{% static 'images/logo-dark.png' %}" class="l-dark" height="24" alt="">
+                        <img src="{% static 'images/logo-light.png' %}" class="l-light" height="24" alt="">
+                    </span>
+                    <img src="{% static 'images/logo-light.png' %}" height="24" class="hidden dark:inline-block" alt="">
+                </a>
+                <!-- End Logo container-->
+            </div><!--end container-->
+        </nav><!--end header-->
+        <!-- End Navbar -->
+
+        <!-- Start Hero -->
+        <section class="relative lg:pb-24 pb-16">
+            <div class="container-fluid">
+                <div class="profile-banner relative text-transparent">
+                    <input id="pro-banner" name="profile-banner" type="file" class="hidden" onchange="loadFile(event)" />
+                    <div class="relative shrink-0">
+                        <img src="{% static 'assets/images/blog/bg.jpg' %}" class="h-80 w-full object-cover" id="profile-banner" alt="">
+                        <div class="absolute inset-0 bg-black/70"></div>
+                        <label class="absolute inset-0 cursor-pointer" for="pro-banner"></label>
+                    </div>
+                </div>
+            </div><!--end container-->
+
+            <div class="container lg:mt-24 mt-16">
+                <div class="md:flex">
+                    <div class="lg:w-1/4 md:w-1/3 md:px-3">
+                        <div class="relative md:-mt-48 -mt-32">
+                            <div class="p-6 rounded-md shadow dark:shadow-gray-800 bg-white dark:bg-slate-900">
+                                <div class="profile-pic text-center mb-5">
+                                    <input id="pro-img" name="profile-image" type="file" class="hidden" onchange="loadFile(event)" />
+                                    <div>
+                                        <div class="relative h-28 w-28 mx-auto">
+                                            <img src="{% static 'images/client/05.jpg' %}" class="rounded-full shadow dark:shadow-gray-800 ring-4 ring-slate-50 dark:ring-slate-800" id="profile-image" alt="">
+                                            <label class="absolute inset-0 cursor-pointer" for="pro-img"></label>
+                                        </div>
+
+                                        <div class="mt-4">
+                                            <h5 class="text-lg font-semibold">Jenny Jimenez</h5>
+                                            <p class="text-slate-400">jennyhot@hotmail.com</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="border-t border-gray-100 dark:border-gray-700">
+                                    <ul class="list-none sidebar-nav mb-0 mt-3" id="navmenu-nav">
+                                        <li class="navbar-item account-menu">
+                                            <a href="home" class="navbar-link text-slate-400 flex items-center py-2 rounded">
+                                                <span class="mr-2 text-[18px] mb-0"><i class="uil uil-dashboard"></i></span>
+                                                <h6 class="mb-0 font-semibold">Dashboard</h6>
+                                            </a>
+                                        </li>
+    
+                                        <li class="navbar-item account-menu">
+                                            <a href="posting" class="navbar-link text-slate-400 flex items-center py-2 rounded">
+                                                <span class="mr-2 text-[18px] mb-0"><i class="uil uil-diary-alt"></i></span>
+                                                <h6 class="mb-0 font-semibold">Posting</h6>
+                                            </a>
+                                        </li>
+    
+                                        <li class="navbar-item account-menu">
+                                            <a href="home" class="navbar-link text-slate-400 flex items-center py-2 rounded">
+                                                <span class="mr-2 text-[18px] mb-0"><i class="uil uil-bell"></i></span>
+                                                <h6 class="mb-0 font-semibold">Profile</h6>
+                                            </a>
+                                        </li>
+    
+                                        <li class="navbar-item account-menu">
+                                            <a href="home" class="navbar-link text-slate-400 flex items-center py-2 rounded">
+                                                <span class="mr-2 text-[18px] mb-0"><i class="uil uil-setting"></i></span>
+                                                <h6 class="mb-0 font-semibold">Settings</h6>
+                                            </a>
+                                        </li>
+    
+                                        <li class="navbar-item account-menu">
+                                            <a href="/admin/logout" class="navbar-link text-slate-400 flex items-center py-2 rounded">
+                                                <span class="mr-2 text-[18px] mb-0"><i class="uil uil-power"></i></span>
+                                                <h6 class="mb-0 font-semibold">Sign Out</h6>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% block content %}  
+                    
+                    {% endblock %}
+                </div><!--end grid-->
+            </div><!--end container-->
+        </section><!--end section-->
+        <!-- End Hero -->
+
+        <!-- Footer Start -->
+        <footer class="footer bg-dark-footer relative text-gray-200 dark:text-gray-200">    
+            <div class="py-[30px] px-0 border-t border-slate-800">
+                <div class="container text-center">
+                    <div class="grid md:grid-cols-2 items-center">
+                        <div class="md:text-left text-center">
+                            <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Techwind. Design with <i class="mdi mdi-heart text-red-600"></i> by <a href="https://shreethemes.in/" target="_blank" class="text-reset">Shreethemes</a>.</p>
+                        </div>
+
+                        <ul class="list-none md:text-right text-center mt-6 md:mt-0">
+                            <li class="inline"><a href=""><img src="assets/images/payments/american-ex.png" class="max-h-6 inline" title="American Express" alt=""></a></li>
+                            <li class="inline"><a href=""><img src="assets/images/payments/discover.png" class="max-h-6 inline" title="Discover" alt=""></a></li>
+                            <li class="inline"><a href=""><img src="assets/images/payments/master-card.png" class="max-h-6 inline" title="Master Card" alt=""></a></li>
+                            <li class="inline"><a href=""><img src="assets/images/payments/paypal.png" class="max-h-6 inline" title="Paypal" alt=""></a></li>
+                            <li class="inline"><a href=""><img src="assets/images/payments/visa.png" class="max-h-6 inline" title="Visa" alt=""></a></li>
+                        </ul>
+                    </div><!--end grid-->
+                </div><!--end container-->
+            </div>
+        </footer><!--end footer-->
+        <!-- Footer End -->
+
+         <!-- Start Cookie Popup -->
+         {% if messages %}
+         {% for message in messages %}
+         <div class="cookie-popup fixed max-w-lg bottom-3 right-3 left-3 sm:left-0 sm:right-0 mx-auto bg-white dark:bg-slate-900 shadow dark:shadow-gray-800 rounded-md py-5 px-6 z-50">
+            <strong class="font-bold text-slate-400">Success!</strong>
+            <p class="text-slate-400">{{message}}.</p>
+            <div class="cookie-popup-actions text-right">
+                <button class="absolute border-none bg-none p-0 cursor-pointer font-semibold top-2 right-2"><i class="uil uil-times text-dark dark:text-slate-200 text-2xl"></i></button>
+            </div>
+            <img src="close.soon" style="display:none;" onerror="(function(el){ setTimeout(function(){ el.parentNode.parentNode.removeChild(el.parentNode); },5000 ); })(this);" />
+        </div>
+        {% endfor %}
+        {% endif %}
+        <!--Note: Cookies Js including in plugins.init.js (path like; assets/js/plugins.init.js) and Cookies css including in _helper.scss (path like; scss/_helper.scss)-->
+        <!-- End Cookie Popup -->
+
+        <!-- Back to top -->
+        <a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top fixed hidden text-lg rounded-full z-10 bottom-5 right-5 h-9 w-9 text-center bg-indigo-600 text-white leading-9"><i class="uil uil-arrow-up"></i></a>
+        <!-- Back to top -->
+
+        <!-- Switcher -->
+        <div class="fixed top-1/4 -right-2 z-50">
+            <span class="relative inline-block rotate-90">
+                <input type="checkbox" class="checkbox opacity-0 absolute" id="chk" />
+                <label class="label bg-slate-900 dark:bg-white shadow dark:shadow-gray-800 cursor-pointer rounded-full flex justify-between items-center p-1 w-14 h-8" for="chk">
+                    <i class="uil uil-moon text-[20px] text-yellow-500"></i>
+                    <i class="uil uil-sun text-[20px] text-yellow-500"></i>
+                    <span class="ball bg-white dark:bg-slate-900 rounded-full absolute top-[2px] left-[2px] w-7 h-7"></span>
+                </label>
+            </span>
+        </div>
+        <!-- Switcher -->
+
+        <!-- JAVASCRIPTS -->
+        <script src="{% static 'libs/feather-icons/feather.min.js' %}"></script>
+        <script src="{% static 'js/plugins.init.js' %}"></script>
+        <script src="{% static 'js/app.js' %}"></script>
+        <!-- JAVASCRIPTS -->
+    </body>
+</html>

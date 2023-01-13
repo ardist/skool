@@ -1,0 +1,26 @@
+{% extends 'admins/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="lg:w-3/4 md:w-2/3 md:px-3 mt-[30px] md:mt-0">
+    <div class="rounded-md shadow dark:shadow-gray-800 bg-white dark:bg-slate-900">
+        <div class="p-6 md:flex justify-between items-center border-b border-gray-100 dark:border-gray-700">
+            <div class="mb-4 md:mb-0">
+                <h5 class="text-xl font-semibold">Posting</h5>
+            </div>            
+        </div>
+        <div class="px-6 p-6">
+            <img src="{{ post.image.url }}" alt="">
+            <div class="content p-6">
+                <a href="blog-detail.html" class="title h5 text-lg font-medium hover:text-indigo-600 duration-500 ease-in-out">{{ post.title }}</a>
+                <p class="text-slate-400 mt-3">{{ post.body|truncatechars:300}}</p>
+            </div>
+            <form method="POST">
+                {% csrf_token %}                
+                <input type="submit" value="Delete Posting" class="btn bg-red-600 hover:bg-red-700 border-red-600 hover:border-red-700 text-white rounded-md">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

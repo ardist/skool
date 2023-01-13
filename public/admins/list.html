@@ -1,0 +1,70 @@
+{% extends 'admins/base.html' %}
+{% load static %}
+
+{% block content %}  
+<div class="lg:w-3/4 md:w-2/3 md:px-3 mt-[30px] md:mt-0">
+    <div class="rounded-md shadow dark:shadow-gray-800 bg-white dark:bg-slate-900">
+        <div class="p-6 md:flex justify-between items-center border-b border-gray-100 dark:border-gray-700">
+            <div class="mb-4 md:mb-0">
+                <h5 class="text-xl font-semibold">Posting</h5>
+            </div>
+            <a href="{% url 'create' %}" class="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md">Add Posting</a>
+        </div>
+        <div class="px-6">
+            <ul>
+                {% for post in posts %}
+                <li class="flex justify-between items-center py-6">
+                    <div class="flex items-center">
+                        <img src="{{ post.image.url }}" class="rounded shadow dark:shadow-gray-800 w-12" alt="">
+
+                        <div class="ml-3">
+                            <p class="font-semibold">{{ post.title }}</p>
+                            <p class="text-slate-400 text-sm">{{post.category}} | {{post.created}}</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="{% url 'delete' post.slug %}" class="btn btn-icon bg-red-600/5 hover:bg-red-600 border-red-600/10 hover:border-red-600 text-red-600 hover:text-white rounded-full"><i data-feather="trash-2" class="h-4 w-4"></i></a>
+                        <a href="{% url 'update' post.slug %}" class="btn btn-icon bg-green-600/5 hover:bg-green-600 border-green-600/10 hover:border-green-600 text-green-600 hover:text-white rounded-full"><i data-feather="edit-2" class="h-4 w-4"></i></a>
+                    </div>
+                </li>
+                {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+    <div class="grid md:grid-cols-12 grid-cols-1 mt-8">
+        <div class="md:col-span-12 text-center">
+            <nav>
+                <ul class="inline-flex items-center -space-x-px">
+                    <li>
+                        <a href="#" class="w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 bg-white dark:bg-slate-900 rounded-l-lg hover:text-white border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600">
+                            <i class="uil uil-angle-left text-[20px]"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 hover:text-white bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600">1</a>
+                    </li>
+                    <li>
+                        <a href="#" class="w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 hover:text-white bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600">2</a>
+                    </li>
+                    <li>
+                        <a href="#" aria-current="page" class="z-10 w-[40px] h-[40px] inline-flex justify-center items-center text-white bg-indigo-600 border border-indigo-600">3</a>
+                    </li>
+                    <li>
+                        <a href="#" class="w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 hover:text-white bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600">4</a>
+                    </li>
+                    <li>
+                        <a href="#" class="w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 hover:text-white bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600">5</a>
+                    </li>
+                    <li>
+                        <a href="#" class="w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 bg-white dark:bg-slate-900 rounded-r-lg hover:text-white border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600">
+                            <i class="uil uil-angle-right text-[20px]"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div><!--end grid-->
+</div>
+{% endblock %}
