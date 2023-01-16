@@ -1,11 +1,15 @@
 {% extends 'pages/base.html' %}
 {% load static %}
 
-{% block content %}         
+{% block content %}   
+<style>
+    .bg-overlay{background: url("{% static 'images/overlay.png' %}");}
+    .bg-hero{background: url("{% static 'images/business/bg02.jpg' %}");}
+</style>      
         <!-- Start Hero -->
-        <section class="relative table w-full py-36 lg:py-64 bg-[url('../../{% static 'images/corporate/bg.jpg' %}')] bg-no-repeat bg-center">
+        <section class="relative table w-full py-36 lg:py-64 bg-no-repeat bg-center bg-hero">
             <div class="absolute inset-0 bg-gradient-to-b to-transparent via-gray-900/50 from-gray-900"></div>
-            <div class="absolute inset-0 bg-[url('../../{% static 'images/overlay.png' %}')] bg-repeat bg-center"></div>
+            <div class="absolute inset-0 bg-overlay bg-repeat bg-center"></div>
             <div class="container">
                 <div class="grid grid-cols-1 text-center mt-10">
                     <span class="text-white/60 font-bold text-sm mb-3">HAVE YOU NOTICED</span>
@@ -18,6 +22,74 @@
                 </div><!--end grid-->
             </div><!--end container-->
         </section><!--end section-->
+
+        <div class="relative">
+            <div class="shape absolute right-0 sm:-bottom-px -bottom-[2px] left-0 overflow-hidden z-1 text-indigo-600">
+                <svg class="w-full h-auto" viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- START -->
+        <section class="relative bg-indigo-600 py-10">
+            <div class="container">
+                <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
+                    <div class="group px-6 py-8 hover:bg-indigo-700 duration-500 ease-in-out">
+                        <i data-feather="codesandbox" class="h-10 w-10 stroke-1 text-white"></i>
+
+                        <div class="content mt-6">
+                            <a href="" class="text-lg font-semibold text-white/80 hover:text-white">Bidang Keahlian Khusus</a>
+                            <p class="text-white/50 mt-4">The phrasal sequence of the is now so that many campaign and benefit</p>
+                            
+                            <div class="mt-5">
+                                <a href="" class="btn btn-link text-white hover:text-white after:bg-white duration-500 ease-in-out">Learn More <i class="uil uil-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div><!--end content-->
+
+                    <div class="group px-6 py-8 hover:bg-indigo-700 duration-500 ease-in-out">
+                        <i data-feather="send" class="h-10 w-10 stroke-1 text-white"></i>
+
+                        <div class="content mt-6">
+                            <a href="" class="text-lg font-semibold text-white/80 hover:text-white">Berbekal Kewirausahaan</a>
+                            <p class="text-white/50 mt-4">The phrasal sequence of the is now so that many campaign and benefit</p>
+                            
+                            <div class="mt-5">
+                                <a href="" class="btn btn-link text-white hover:text-white after:bg-white duration-500 ease-in-out">Learn More <i class="uil uil-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div><!--end content-->
+
+                    <div class="group px-6 py-8 hover:bg-indigo-700 duration-500 ease-in-out">
+                        <i data-feather="star" class="h-10 w-10 stroke-1 text-white"></i>
+
+                        <div class="content mt-6">
+                            <a href="" class="text-lg font-semibold text-white/80 hover:text-white">Bisa Lanjut Kerja atau Pendidikan Tinggi</a>
+                            <p class="text-white/50 mt-4">The phrasal sequence of the is now so that many campaign and benefit</p>
+                            
+                            <div class="mt-5">
+                                <a href="" class="btn btn-link text-white hover:text-white after:bg-white duration-500 ease-in-out">Learn More <i class="uil uil-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div><!--end content-->
+
+                    <div class="group px-6 py-8 hover:bg-indigo-700 duration-500 ease-in-out">
+                        <i data-feather="bookmark" class="h-10 w-10 stroke-1 text-white"></i>
+
+                        <div class="content mt-6">
+                            <a href="" class="text-lg font-semibold text-white/80 hover:text-white">Kerjasama Luar Negeri</a>
+                            <p class="text-white/50 mt-4">The phrasal sequence of the is now so that many campaign and benefit</p>
+                            
+                            <div class="mt-5">
+                                <a href="" class="btn btn-link text-white hover:text-white after:bg-white duration-500 ease-in-out">Learn More <i class="uil uil-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div><!--end content-->
+                </div><!--end grid-->
+            </div><!--end container-->
+        </section><!--end section-->
+        <!-- End -->
 
         <!-- Start -->
         <section class="relative md:py-24 py-16">

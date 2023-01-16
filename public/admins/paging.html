@@ -1,0 +1,47 @@
+{% if page.has_other_pages %}
+<div class="grid md:grid-cols-12 grid-cols-1 mt-8">
+  <div class="md:col-span-12 text-center">
+      <nav>
+          <ul class="inline-flex items-center -space-x-px">
+              {% if page.has_previous %}
+              <li>
+                  <a href="?page={{ page.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}" class="page-link w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 bg-white dark:bg-slate-900 rounded-l-lg hover:text-white border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600">
+                      <i class="uil uil-angle-left text-[20px]"></i>
+                  </a>
+              </li>
+              {% else %}
+              <li>
+                <a href="" class="page-link w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 bg-white dark:bg-slate-900 rounded-l-lg hover:text-white border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600">
+                    <i class="uil uil-angle-left text-[20px]"></i>
+                </a>
+              </li>
+              {% endif %}
+              {% for i in page.paginator.page_range %}
+                {% if page.number == i %}
+                  <li>
+                    <a href="" aria-current="page" class="page-link w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 hover:text-white bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600">{{ i }}</a>
+                  </li>
+                {% else %}
+                  <li>
+                    <a href="?page={{ i }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}" class="page-link w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 hover:text-white bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600">{{ i }}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+              {% if page.has_next %}
+              <li>
+                <a href="?page={{ page.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}" class="page-link w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 bg-white dark:bg-slate-900 rounded-r-lg hover:text-white border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600">
+                    <i class="uil uil-angle-right text-[20px]"></i>
+                </a>
+              </li>
+              {% else %}
+              <li>
+                <a href="" class="page-link w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 bg-white dark:bg-slate-900 rounded-r-lg hover:text-white border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600">
+                    <i class="uil uil-angle-right text-[20px]"></i>
+                </a>
+              </li>
+              {% endif %}
+          </ul>
+      </nav>
+  </div>
+</div>
+{% endif %}

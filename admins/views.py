@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.utils.text import slugify
+from django.core.paginator import Paginator, EmptyPage,PageNotAnInteger
 from django.contrib import messages
 from admins.models import UserProfile
 from pages.models import Post, Category
@@ -22,7 +23,16 @@ def listPost(request):
     user_profile = UserProfile.objects.get(user=user)
     context = {'profile':user_profile}
     posts = Post.objects.all()
-    context ={'posts':posts, 'profile':user_profile}
+    paginator = Paginator(posts, 3)
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:       
+        posts = paginator.page(1)
+    except EmptyPage:        
+        posts = paginator.page(paginator.num_pages) 
+
+    context ={'posts':posts, 'profile':user_profile, 'pages':page}
     return render(request, 'admins/list.html', context)
 
 @login_required

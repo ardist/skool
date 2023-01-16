@@ -1,9 +1,12 @@
 {% extends 'pages/base.html' %}
 {% load static %}
 
-{% block content %}         
+{% block content %}    
+<style>   
+    .bg-hero{background: url("{% static 'images/business/bg02.jpg' %}");}
+</style>     
         <!-- Start Hero -->
-        <section class="relative table w-full py-32 lg:py-36 bg-[url('../../assets/images/blog/bg.jpg')] bg-center bg-no-repeat">
+        <section class="relative table w-full py-32 lg:py-36 bg-center bg-no-repeat bg-hero">
             <div class="absolute inset-0 bg-black opacity-80"></div>
             <div class="container">
                 <div class="grid grid-cols-1 pb-8 text-center mt-10">
